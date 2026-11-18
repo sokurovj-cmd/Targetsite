@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -9,14 +10,15 @@
   <style>
     :root {
       --bg: #FFFFFF;
-      --surface: #F7F7F5;
-      --surface-alt: #EFECE6;
-      --text: #141414;
-      --text-secondary: #5C5C5C;
-      --border: #E5E4E0;
-      --accent: #141414;
-      --accent-warm: #C85A32;
-      --wa: #1F8B4C;
+      --surface: #F4F7FB;
+      --surface-alt: #E6EEF8;
+      --text: #0F172A;
+      --text-secondary: #475569;
+      --border: #DCE5F2;
+      --primary: #0B57D0;
+      --primary-hover: #0842A0;
+      --primary-soft: #E8F0FE;
+      --wa: #16A34A;
     }
 
     * {
@@ -50,7 +52,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -72,15 +74,16 @@
     }
 
     .brand-name {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.1;
+      color: var(--primary);
     }
 
     .brand-sub {
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-secondary);
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -100,7 +103,7 @@
     }
 
     .nav-menu a:hover {
-      color: var(--text);
+      color: var(--primary);
     }
 
     .header-contacts {
@@ -113,7 +116,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 9px 14px;
+      padding: 9px 15px;
       border-radius: 99px;
       font-size: 13px;
       font-weight: 700;
@@ -129,21 +132,24 @@
 
     .pill-ig:hover {
       background: var(--surface-alt);
+      border-color: var(--primary);
+      color: var(--primary);
     }
 
     .pill-wa {
-      background: var(--text);
+      background: var(--primary);
       color: #fff;
     }
 
     .pill-wa:hover {
-      background: var(--accent-warm);
+      background: var(--primary-hover);
     }
 
     /* HERO */
     .hero {
       padding: 64px 0 56px;
       border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
     }
 
     .hero-grid {
@@ -156,11 +162,14 @@
     .eyebrow {
       display: inline-block;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent-warm);
-      margin-bottom: 16px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin-bottom: 18px;
     }
 
     h1 {
@@ -169,6 +178,11 @@
       line-height: 1.08;
       letter-spacing: -0.03em;
       margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    h1 span {
+      color: var(--primary);
     }
 
     .hero-lead {
@@ -184,12 +198,12 @@
       gap: 12px;
     }
 
-    .btn-dark {
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: var(--text);
+      background: var(--primary);
       color: #fff;
       padding: 15px 28px;
       border-radius: 12px;
@@ -201,8 +215,8 @@
       transition: background 0.2s, transform 0.15s;
     }
 
-    .btn-dark:hover {
-      background: var(--accent-warm);
+    .btn-primary:hover {
+      background: var(--primary-hover);
       transform: translateY(-1px);
     }
 
@@ -211,7 +225,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      background: transparent;
+      background: #FFFFFF;
       color: var(--text);
       padding: 15px 24px;
       border-radius: 12px;
@@ -219,20 +233,22 @@
       font-weight: 700;
       text-decoration: none;
       border: 1px solid var(--border);
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
 
     .btn-outline:hover {
-      border-color: var(--text);
+      border-color: var(--primary);
+      color: var(--primary);
       background: var(--surface);
     }
 
     /* SPECIALIST CARD */
     .profile-box {
-      background: var(--surface);
+      background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
     }
 
     .profile-top {
@@ -280,16 +296,17 @@
       align-items: center;
       justify-content: space-between;
       padding: 14px 16px;
-      background: var(--bg);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       text-decoration: none;
       color: var(--text);
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.2s;
     }
 
     .contact-item:hover {
-      border-color: var(--text);
+      border-color: var(--primary);
+      background: var(--primary-soft);
     }
 
     .contact-label {
@@ -301,6 +318,7 @@
     .contact-val {
       font-size: 15px;
       font-weight: 800;
+      color: var(--primary);
     }
 
     /* APPROACH GRID */
@@ -346,9 +364,12 @@
     .info-num {
       font-size: 12px;
       font-weight: 800;
-      color: var(--accent-warm);
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 4px 10px;
+      border-radius: 6px;
       margin-bottom: 14px;
-      display: block;
+      display: inline-block;
     }
 
     .info-card h3 {
@@ -392,6 +413,10 @@
       transition: all 0.2s;
     }
 
+    .tab-btn:hover {
+      background: var(--surface);
+    }
+
     .tab-btn strong {
       display: block;
       font-size: 20px;
@@ -406,7 +431,7 @@
     }
 
     .tab-btn.active {
-      background: var(--text);
+      background: var(--primary);
       color: #fff;
     }
 
@@ -415,7 +440,7 @@
     }
 
     .tab-btn.active span {
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.85);
     }
 
     .tab-panel {
@@ -453,8 +478,8 @@
     }
 
     .badge-included {
-      background: #EAF6EE;
-      color: var(--wa);
+      background: var(--primary-soft);
+      color: var(--primary);
       font-size: 13px;
       font-weight: 800;
       padding: 8px 14px;
@@ -474,17 +499,19 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: border-color 0.2s, transform 0.2s;
+      background: #FFFFFF;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
     .duration-card:hover {
-      border-color: var(--text);
+      border-color: var(--primary);
       transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(11, 87, 208, 0.08);
     }
 
     .duration-card.featured {
-      border-color: var(--accent-warm);
-      background: #FFFDFB;
+      border-color: var(--primary);
+      background: #F8FAFF;
     }
 
     .dur-tag {
@@ -492,7 +519,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--accent-warm);
+      color: var(--primary);
       margin-bottom: 8px;
       display: block;
     }
@@ -507,6 +534,7 @@
       font-size: 28px;
       font-weight: 800;
       letter-spacing: -0.02em;
+      color: var(--primary);
       margin-bottom: 6px;
     }
 
@@ -520,8 +548,8 @@
       width: 100%;
       padding: 13px;
       border-radius: 10px;
-      border: 1px solid var(--text);
-      background: var(--text);
+      border: 1px solid var(--primary);
+      background: var(--primary);
       color: #fff;
       font-family: inherit;
       font-size: 14px;
@@ -531,8 +559,8 @@
     }
 
     .btn-select:hover {
-      background: var(--accent-warm);
-      border-color: var(--accent-warm);
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
     }
 
     /* CONSULTATION FORM */
@@ -569,12 +597,12 @@
     }
 
     .direct-links a {
-      color: var(--text);
+      color: var(--primary);
       text-decoration: none;
     }
 
     .direct-links a:hover {
-      color: var(--accent-warm);
+      text-decoration: underline;
     }
 
     .form-panel {
@@ -610,7 +638,7 @@
 
     .field input:focus,
     .field select:focus {
-      border-color: var(--text);
+      border-color: var(--primary);
     }
 
     /* FOOTER */
@@ -635,7 +663,7 @@
     }
 
     .footer-links a {
-      color: var(--text);
+      color: var(--primary);
       font-weight: 700;
       text-decoration: none;
     }
@@ -709,12 +737,12 @@
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">Instagram & Meta Business</span>
-        <h1>Таргетированная реклама для роста ваших продаж</h1>
+        <h1>Таргетированная реклама для <span>роста ваших продаж</span></h1>
         <p class="hero-lead">
           Привлекайте целевых клиентов и стабильный поток заявок каждый день. Работа по настройке и ведению рекламы уже включена в стоимость каждого тарифа.
         </p>
         <div class="hero-actions">
-          <a href="#tariffs" class="btn-dark">Выбрать тариф</a>
+          <a href="#tariffs" class="btn-primary">Выбрать тариф</a>
           <a href="https://wa.me/996704515121?text=Здравствуйте! Хочу обсудить запуск таргетированной рекламы." target="_blank" class="btn-outline">Написать в WhatsApp</a>
         </div>
       </div>
@@ -968,7 +996,7 @@
               <option value="$10/день — 7 күнгө (6 650 сом)">$10/день — 7 күнгө (6 650 сом)</option>
             </select>
           </div>
-          <button class="btn-dark" style="width: 100%;" onclick="sendConsultation()">Отправить заявку в WhatsApp</button>
+          <button class="btn-primary" style="width: 100%;" onclick="sendConsultation()">Отправить заявку в WhatsApp</button>
         </div>
       </div>
     </div>
